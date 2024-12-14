@@ -57,7 +57,33 @@
         
         <br><input type="submit" name="product" value="Submit">
 
-    </form>
+    </form><br><br>
+
+    <?php 
+        $show=$db->query("select * from product_details");
+        echo "<table border='1' style='border-collapse:collapse; width:300px;'> <tr>
+            <th>ID</th>
+            <th>Brand Name</th>
+            <th>Contact</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Brand d</th>
+        
+        
+        </tr>";
+        while(list($id,$bname,$contact,$pname,$price,$bid)= $show->fetch_row()){
+            echo  "<tr>
+                <td>$id</td>
+                <td>$bname</td>
+                <td>$contact</td>
+                <td>$pname</td>
+                <td>$price</td>
+                <td>$bid</td>
+            </tr>";
+            
+        }
+        echo "</table>";
+    ?>
 
     
 </body>
